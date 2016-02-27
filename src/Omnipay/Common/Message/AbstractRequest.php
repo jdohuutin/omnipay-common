@@ -279,7 +279,7 @@ abstract class AbstractRequest implements RequestInterface
     {
         $amount = $this->getParameter('amount');
         if ($amount !== null) {
-            if (!is_float($amount) &&
+            if (!is_numeric($amount) &&
                 $this->getCurrencyDecimalPlaces() > 0 &&
                 false === strpos((string) $amount, '.')) {
                 throw new InvalidRequestException(
